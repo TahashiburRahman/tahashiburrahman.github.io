@@ -50,7 +50,7 @@
 
     <div class="content">
     <h2>Hi There,<br/> I'm Tahashibur <span>Rahman</span></h2>
-    <p>i am into <span class="typing-text">Web Development and SEO</span></p>
+    <p>i am into <span class="typing-text">WEB DEVELOPMENT and SEO</span></p>
     <a href="#about" class="btn"><span>About Me</span>
       <i class="fas fa-arrow-circle-down"></i>
     </a>
@@ -114,7 +114,7 @@
             </div> -->
             <div class="box">
               <p><span> email : </span> tahashiburrahman5@gmail.com</p>
-              <p><span> age: </span> 23</p>
+              <p><span>Age:</span> <span id="age"></span></p>
               <p><span> phone : </span> +880 1615 999 469</p>
               <p><span> place : </span>Mirpur Dhaka, Bangladesh - 1216</p>
             </div>
@@ -342,32 +342,6 @@
         </div>
       </div>
     </div>
-<!-- 
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Frshr Technologies</h2>
-        </div>
-        <div class="desc">
-            <h3>Wordpress Developer | Internship</h3>
-            <p>April 2021 - April 2021</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>WonderingBlog</h2>
-        </div>
-        <div class="desc">
-            <h3>Web Development & SEO | Internship</h3>
-            <p>March 2021 - April 2021</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="morebtn">
     <a href="/experience" class="btn"><span>View All</span>
       <i class="fas fa-arrow-right"></i>
@@ -518,5 +492,24 @@
     });
   });
   </script>
+  <script>
+    function calculateAge(birthDate) {
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+  
+      if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < birthDate.getDate())
+      ) {
+        age--;
+      }
+      return age;
+    }
+  
+    const birthDate = new Date(2001, 6, 8); // July = 6 (0-based)
+    document.getElementById("age").textContent = calculateAge(birthDate);
+  </script>
+  
 </body>
 </html>
